@@ -2,30 +2,23 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 html,body{
     width:100%;
     height:100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    background-color: black;
 }
 
-.strip{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:6vh;
-    background-color: black;
-    z-index: -2;
-}
 
 nav{
-    position: sticky;
+    position: fixed;
+    top:0;
     background-color: rgba(0, 0, 0, 0.833);
     backdrop-filter: blur(15px);
-    width:100vw;
+    width:100%;
     height:6vh;
     z-index: 3;
 }
@@ -61,6 +54,10 @@ nav{
 .overlay{
     width:100vw;
     height:6vh;
+    position: absolute;
+    top:6%;
+    left:0;
+    z-index: 2;
     background-color:#1D1D1F;
     display: flex;
     justify-content: center;
@@ -82,13 +79,21 @@ nav{
 
 main{
     position: absolute;
-    display: grid;
+    top:12%;
+    left:0;
+    display: flex;
     width:100vw;
     height: auto;
-    grid-template-columns: 100vw;
-    grid-template-rows: 88vh 90vh 90vh;
-    background-color: #ffffff36;
-    row-gap: 1.5vh;
+    /* grid-template-columns: 100vw;
+    grid-template-rows: 88vh 90vh 90vh; */
+    background-color: #ffffff;
+    /* row-gap: 1.5vh; */
+    flex-direction: column;
+}
+
+main .sec{
+    margin-bottom:10px;
+    height:88vh;
 }
 
 main .sec:nth-child(1)
@@ -153,6 +158,7 @@ section h3{
     top:65%;
     left:42%;
     margin-left:10px;
+    transition: .3s;
 }
 
 .sec .a{
@@ -169,9 +175,10 @@ section h3{
 }
 
 .sec p{
+    display: inline-block;
     position: relative;
-    top:67%;
-    left:40%;
+    top:72%;
+    left:26%;
     font-size: 14px;
     font-weight: 100;
     font-family: sans-serif;
